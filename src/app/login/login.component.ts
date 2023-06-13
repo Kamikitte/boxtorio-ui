@@ -22,10 +22,8 @@ export class LoginComponent {
       .subscribe(result => {
         if (result) {
           const role = this.authService.getRole();
-          if (role?.toLowerCase() === 'admin') {
-            this.router.navigateByUrl('/admin');
-          } else {
-            this.router.navigateByUrl('/user');
+          if (role !== null) {
+            this.router.navigateByUrl('/dashboard');
           }
         } else {
           console.log('Invalid credentials');

@@ -1,0 +1,18 @@
+<div *ngIf="showDPList">
+    <button mat-raised-button color="primary" (click)="openForm()">Создать новый пункт</button>
+    <mat-list>
+        <mat-list-item *ngFor="let point of deliveryPoints">
+            <span matListItemTitle>{{ point.address }}</span>
+            <span matListItemLine>ID: {{ point.id }}</span>
+        </mat-list-item>
+      </mat-list>
+</div>
+
+<div *ngIf="showCreationForm">
+    <mat-form-field>
+        <input matInput placeholder="Адрес" [(ngModel)]="address">
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" (click)="createFromForm()">Создать</button>
+    <button mat-raised-button color="primary" (click)="openList()">Обратно</button>
+</div>

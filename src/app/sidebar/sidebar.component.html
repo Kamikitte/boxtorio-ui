@@ -1,1 +1,16 @@
-<p>sidebar works!</p>
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer class="example-sidenav">
+        <button mat-button routerLink="/">Выйти</button>
+        <button mat-button routerLink="/dashboard/dpoints" *ngIf="showAdminButtons">Пункты выдачи</button>
+        <button mat-button routerLink="/dashboard/accounts" *ngIf="showAdminButtons">Управление аккаунтами</button>
+        <button mat-button routerLink="/dashboard/boxes" *ngIf="showUserButtons">кнопка рабочего</button>
+    </mat-drawer>
+    <div class="example-sidenav-content">
+        <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <router-outlet></router-outlet>        
+    </div>
+</mat-drawer-container>
+  
+  

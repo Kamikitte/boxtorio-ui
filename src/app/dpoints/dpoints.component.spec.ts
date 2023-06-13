@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { DpointsComponent } from './dpoints.component';
+
+describe('DpointsComponent', () => {
+  let component: DpointsComponent;
+  let fixture: ComponentFixture<DpointsComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [DpointsComponent]
+    });
+    fixture = TestBed.createComponent(DpointsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

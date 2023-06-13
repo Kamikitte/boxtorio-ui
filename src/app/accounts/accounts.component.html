@@ -1,0 +1,34 @@
+<div *ngIf="showList">
+    <button mat-raised-button color="primary" (click)="openForm()">Создать новый аккаунт</button>
+    <mat-list>
+        <mat-list-item *ngFor="let account of accounts">
+            <span matListItemTitle>{{ account.name }}</span>
+            <span matListItemLine>ID: {{ account.id }}</span>
+            <span matListItemLine>Email: {{ account.email }}</span>
+            <span matListItemLine>Роль: {{ account.role }}</span>
+        </mat-list-item>
+      </mat-list>
+</div>
+
+<div *ngIf="showCreationForm">
+    <mat-form-field>
+        <input matInput placeholder="Имя" [(ngModel)]="name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Почта" [(ngModel)]="email">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Пароль" [(ngModel)]="password">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Повторите пароль" [(ngModel)]="retryPassword">
+    </mat-form-field>
+    <mat-label>Роль</mat-label>
+    <mat-select [(ngModel)]="role">
+            <mat-option value="Worker">Сотрудник</mat-option>
+            <mat-option value="Admin">Администратор</mat-option>
+    </mat-select>
+    
+    <button mat-raised-button color="primary" (click)="createFromForm()">Создать</button>
+    <button mat-raised-button color="primary" (click)="openList()">Обратно</button>
+</div>

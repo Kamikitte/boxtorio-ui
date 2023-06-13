@@ -1,0 +1,15 @@
+.example-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+  
+  .example-sidenav {
+    width: 200px;
+  }
+  
+  .example-sidenav-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
